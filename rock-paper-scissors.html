@@ -17,14 +17,45 @@
 	 			return "Scissors";
 	 		}
  	}
+//First Try
+ 	// function playerSelection(){
+ 	// 	let playerInput = prompt("Rock, paper, or scissors?");
+  //       if (playerInput.toLowerCase() === "rock") {
+  //       	return "Rock";
+  //       } else if (playerInput.toLowerCase() === "paper") {
+  //           return "Paper";
+  //       } else if (playerInput.toLowerCase() === "scissors") {
+  //           return "Scissors";
+  //       } else {
+  //       	alert("Try again.");
+  //       	playerSelection();
+  //       }
+  // 	}
 
  	function playerSelection(){
- 		prompt()
- 	}
+ 		let playerInput;
+ 	do {
+ 		playerInput = prompt("Rock, paper, or scissors?");
+        if (playerInput.toLowerCase() === "rock") {
+        	return "Rock";
+        } else if (playerInput.toLowerCase() === "paper") {
+            return "Paper";
+        } else if (playerInput.toLowerCase() === "scissors") {
+            return "Scissors";
+        } else {
+        	alert("Try again.");
+        }
+        }
+ 	while (playerInput.toLowerCase() != "rock" || "paper" || "scissors")
+  	}
 
- 	function playRound(playerSelection, computerSelection){
+
+ 	function playRound(playerSelection, computerSelection) {
 
  	}
+   
+    const computerSelection = computerPlay();
+
   </script>
 </body>
 </html>
