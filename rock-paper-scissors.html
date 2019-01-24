@@ -5,6 +5,11 @@
 </head>
 <body>
   <script>
+
+ 	function playRound(a, b) {
+    let playerSelection = playerPlay();
+  	let computerSelection = computerPlay();
+ 	
  	function computerPlay(){
  		function getRandomInt() {
 		return Math.floor(Math.random() * 3) + 1;
@@ -17,22 +22,8 @@
 	 			return "Scissors";
 	 		}
  	}
-//First Try
- 	// function playerSelection(){
- 	// 	let playerInput = prompt("Rock, paper, or scissors?");
-  //       if (playerInput.toLowerCase() === "rock") {
-  //       	return "Rock";
-  //       } else if (playerInput.toLowerCase() === "paper") {
-  //           return "Paper";
-  //       } else if (playerInput.toLowerCase() === "scissors") {
-  //           return "Scissors";
-  //       } else {
-  //       	alert("Try again.");
-  //       	playerSelection();
-  //       }
-  // 	}
-
- 	function playerSelection(){
+ 	
+ 	function playerPlay(){
  		let playerInput;
  	do {
  		playerInput = prompt("Rock, paper, or scissors?");
@@ -50,11 +41,22 @@
   	}
 
 
- 	function playRound(playerSelection, computerSelection) {
-
+        if (playerSelection === computerSelection) {
+        	return "It's a draw.";
+        } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+        	return "You win! Rock beats scissors.";
+        } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+        	return "You lose! Paper beats rock.";
+        } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+        	return "You win! Scissors beats paper.";
+        } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+        	return "You lose! Rock beats scissors.";
+        } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+        	return "You win! Paper beats rock.";
+        } else {
+        	return "You lose! Scissors beats paper.";
+        }
  	}
-   
-    const computerSelection = computerPlay();
 
   </script>
 </body>
