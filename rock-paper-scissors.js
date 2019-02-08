@@ -2,6 +2,17 @@ let playerScore = 0;
 let computerScore = 0;
 let playerSelection;
 let computerSelection;
+playerScoreParagraph = document.createElement('div');
+computerScoreParagraph = document.createElement('div');
+
+const round = document.getElementById("current-round")
+
+function updateScore() {
+playerScoreParagraph.textContent = playerScore;
+computerScoreParagraph.textContent = computerScore;
+document.getElementById("player-score").appendChild(playerScoreParagraph);
+document.getElementById("computer-score").appendChild(computerScoreParagraph);
+}
 
 function computerPlay() {
   function getRandomInt() {
@@ -27,40 +38,45 @@ buttons.forEach((button) => {
   button.addEventListener('click', (e) => {
     playerSelection = (button.id);
     playRound();
+    updateScore();
   });
 
 function playRound(a, b) {
     computerPlay();
   if (playerSelection === computerSelection) {
-  	console.log("It's a draw.");
+  	round.textContent = "It's a draw.";
   } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
   	playerScore++;
-  	console.log("You win! Rock beats scissors.");
+    round.textContent = "You win! Rock beats scissors.";
   } else if (playerSelection === "Rock" && computerSelection === "Paper") {
   	computerScore++;
-  	console.log("You lose! Paper beats rock.");
+    round.textContent = "You lose! Paper beats rock.";
   } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
   	playerScore++;
-  	console.log("You win! Scissors beats paper.");
+    round.textContent = "You win! Scissors beats paper.";
   } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
   	computerScore++;
-  	console.log("You lose! Rock beats scissors.");
+    round.textContent = "You lose! Rock beats scissors.";
   } else if (playerSelection === "Paper" && computerSelection === "Rock") {
   	playerScore++;
-  	console.log("You win! Paper beats rock.");
+    round.textContent = "You win! Paper beats rock.";
   } else {
   	computerScore++;
-  	console.log("You lose! Scissors beats paper.");
+    round.textContent = "You lose! Scissors beats paper.";
   }
   result();
 }
 
 function result() {
   if (playerScore === 5) {
-  	console.log("You're the winner. You won " + playerScore + " games.");
+  	const playerWin = document.createElement('div');
+    playerWin.textContent = "You're the winner. You won " + playerScore + " games.";
+    document.getElementById("results").appendChild(playerWin);
 
   } else if (computerScore === 5) {
-  	console.log("You're the loser. You lost " + computerScore + " games");
+  	const computerWin = document.createElement('div');
+    computerWin.textContent = "You're the loser. You lost " + computerScore + " games";
+    document.getElementById("results").appendChild(computerWin);
 
   }
 }
