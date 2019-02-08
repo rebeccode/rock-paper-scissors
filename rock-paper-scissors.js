@@ -2,16 +2,14 @@ let playerScore = 0;
 let computerScore = 0;
 let playerSelection;
 let computerSelection;
-playerScoreParagraph = document.createElement('div');
-computerScoreParagraph = document.createElement('div');
 
-const round = document.getElementById("current-round")
+const round = document.getElementById("current-round");
+const playerUpdate = document.getElementById("player-score");
+const computerUpdate = document.getElementById("computer-score");
 
 function updateScore() {
-playerScoreParagraph.textContent = playerScore;
-computerScoreParagraph.textContent = computerScore;
-document.getElementById("player-score").appendChild(playerScoreParagraph);
-document.getElementById("computer-score").appendChild(computerScoreParagraph);
+playerUpdate.textContent = playerScore;
+computerUpdate.textContent = computerScore;
 }
 
 function computerPlay() {
