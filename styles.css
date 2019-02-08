@@ -1,3 +1,19 @@
-.disabled {
-  pointer-events: none;
+div {
+	font-family: sans-serif;
+}
+
+#score-card {
+
+}
+
+#current-round {
+
+}
+
+#results {
+
+}
+
+.buttons {
+
 }
