@@ -1,5 +1,33 @@
+body {
+  background-color: white;
+}
+
 div {
-	font-family: sans-serif;
+  font-family: sans-serif;
+}
+
+.button {
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 10vw;
+}
+
+#Rock, #Paper, #Scissors {
+  background-color: #a5a4a0;
+}
+
+#reset {
+  display: block;
+  background-color: #5b0a00;
+}
+
+.button:hover {
+  border: 1px solid gray;
+  transition-duration: 0.4s;
 }
 
 #score-card {
@@ -14,6 +42,8 @@ div {
 
 }
 
-.buttons {
-
+@media (max-width: 300px) {
+  body {
+    background-color: blue;
+  }
 }

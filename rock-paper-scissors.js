@@ -2,15 +2,27 @@ let playerScore = 0;
 let computerScore = 0;
 let playerSelection;
 let computerSelection;
-
-const round = document.getElementById("current-round");
 const playerUpdate = document.getElementById("player-score");
 const computerUpdate = document.getElementById("computer-score");
+const round = document.getElementById("current-round");
+const results = document.getElementById("results");
 
 function updateScore() {
 playerUpdate.textContent = playerScore;
 computerUpdate.textContent = computerScore;
 }
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    if (button.id != "reset") {
+      playerSelection = (button.id);
+      playRound();
+      updateScore();
+    } else {
+      restart();
+    }
+  });
 
 function computerPlay() {
   function getRandomInt() {
@@ -28,18 +40,8 @@ function computerPlay() {
   }
     }
 
-// buttons is a node list. It looks and acts much like an array.
-const buttons = document.querySelectorAll('button');
-// we use the .forEach method to iterate through each button
-buttons.forEach((button) => {
-  // and for each one we add a 'click' listener
-  button.addEventListener('click', (e) => {
-    playerSelection = (button.id);
-    playRound();
-    updateScore();
-  });
-
 function playRound(a, b) {
+   if (playerScore < 5 && computerScore < 5) {
     computerPlay();
   if (playerSelection === computerSelection) {
   	round.textContent = "It's a draw.";
@@ -64,24 +66,23 @@ function playRound(a, b) {
   }
   result();
 }
-
-function result() {
-  if (playerScore === 5) {
-  	const playerWin = document.createElement('div');
-    playerWin.textContent = "You're the winner. You won " + playerScore + " games.";
-    document.getElementById("results").appendChild(playerWin);
-
-  } else if (computerScore === 5) {
-  	const computerWin = document.createElement('div');
-    computerWin.textContent = "You're the loser. You lost " + computerScore + " games";
-    document.getElementById("results").appendChild(computerWin);
-
-  }
 }
 
-function restart(){
+function result() {
+    if (playerScore === 5) {
+    results.textContent = "You're the winner. You won " + playerScore + " games.";
+    } else if (computerScore === 5) {
+    results.textContent = "You're the loser. You lost " + computerScore + " games.";
+    }
+    return;
+}
+
+function restart() {
   playerScore = 0;
   computerScore = 0;
+  results.textContent = '';
+  round.textContent = '';
+  updateScore();
   return;
 }
    
