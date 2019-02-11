@@ -6,31 +6,41 @@ div {
   font-family: sans-serif;
 }
 
+#button-area {
+	background-color: blue;
+}
+
 .button {
-  outline: none;
-  border: 1px solid white;
-  color: white;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 10vw;
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
   border-radius: 50%;
-  font-size: 10vw;
-}
-
-#Rock, #Paper, #Scissors {
-  background-color: #a5a4a0;
-}
-
-#reset {
-  display: block;
-  background-color: #5b0a00;
 }
 
 .button:hover {
-  border: 1px solid gray;
-  transition-duration: 0.4s;
+	background-color: #000000;
+    transition-duration: 0.5s;
+}
+
+#Rock, #Paper, #Scissors {
+ 
+}
+
+#reset {
+
+  font-size: 5vw;
+
 }
 
 #score-card {
+  display: flex;
 
 }
 

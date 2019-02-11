@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/styles.css">
   <title>Rock Paper Scissors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
 </head>
 <body>
 
-<div id="results"></div>
-<div id="current-round"></div>
-
-
-<div id="score-card">
-  <div>Player Score: <span id="player-score">0</span></div>
-  <div>Computer Score: <span id="computer-score">0</span></div>
+<div id="screen">
+	<div id="results"></div>
+	<div id="choices"></div>
+	<div id="current-round"></div>
+	<div id="score-card">
+	  <div>&#x1F9E0 Player Score: <span id="player-score">0</span></div>
+	  <div>&#x1F916 Computer Score: <span id="computer-score">0</span></div>
+	</div>
 </div>
 
-  <button id="Rock" class="button">Rock</button>
-  <button id="Paper" class="button">Paper</button>
-  <button id="Scissors" class="button">Scissors</button>
-
-  <button id="reset" class="button">Reset</button>
+<div id="button-area">
+	<button id="Rock" class="button" aria-label="Rock">&#x270A</button>
+	<button id="Paper" class="button" aria-label="Paper">&#x1F590</button>
+	<button id="Scissors" class="button" aria-label="Scissors">&#x270C</button>
+	<button id="reset" class="button">Restart</button>
+</div>
 
 <script src="rock-paper-scissors.js"></script>
 </body>

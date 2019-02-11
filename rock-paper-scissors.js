@@ -1,3 +1,4 @@
+/* Global Variables */
 let playerScore = 0;
 let computerScore = 0;
 let playerSelection;
@@ -6,13 +7,15 @@ const playerUpdate = document.getElementById("player-score");
 const computerUpdate = document.getElementById("computer-score");
 const round = document.getElementById("current-round");
 const results = document.getElementById("results");
+const choices = document.getElementById("choices");
+const buttons = document.querySelectorAll('button');
+/* end */
 
 function updateScore() {
 playerUpdate.textContent = playerScore;
 computerUpdate.textContent = computerScore;
 }
 
-const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
   button.addEventListener('click', (e) => {
     if (button.id != "reset") {
@@ -22,7 +25,8 @@ buttons.forEach((button) => {
     } else {
       restart();
     }
-  });
+  })
+  })
 
 function computerPlay() {
   function getRandomInt() {
@@ -40,8 +44,12 @@ function computerPlay() {
   }
     }
 
+function printChoices() {
+  choices.textContent = "You chose " + playerSelection.toLowerCase() + ". Computer chose " + computerSelection.toLowerCase() + ".";
+}
+
 function playRound(a, b) {
-   if (playerScore < 5 && computerScore < 5) {
+  if (playerScore < 5 && computerScore < 5) {
     computerPlay();
   if (playerSelection === computerSelection) {
   	round.textContent = "It's a draw.";
@@ -64,26 +72,26 @@ function playRound(a, b) {
   	computerScore++;
     round.textContent = "You lose! Scissors beats paper.";
   }
+  printChoices();
   result();
 }
 }
 
 function result() {
-    if (playerScore === 5) {
-    results.textContent = "You're the winner. You won " + playerScore + " games.";
-    } else if (computerScore === 5) {
-    results.textContent = "You're the loser. You lost " + computerScore + " games.";
-    }
-    return;
+  if (playerScore === 5) {
+  results.textContent = "You're the winner. You won " + playerScore + " games.";
+  } else if (computerScore === 5) {
+  results.textContent = "You're the loser. You lost " + computerScore + " games.";
+  }
+  return;
 }
 
 function restart() {
   playerScore = 0;
   computerScore = 0;
-  results.textContent = '';
+  choices.textContent = '';
   round.textContent = '';
+  results.textContent = '';
   updateScore();
   return;
 }
-   
-});
