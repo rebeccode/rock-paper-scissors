@@ -6,14 +6,15 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <title>Rock Paper Scissors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|VT323" rel="stylesheet">
   <meta charset="UTF-8">
 </head>
 <body>
-
+<h1 id="title-area">Rock, Paper, Scissors</h1>
 <div id="screen">
 	<div id="score-card">
-	  <div class="player-info"><i class="fas fa-user"></i>Player Score: <span id="player-score">0</span></div>
-	  <div class="computer-info"><i class="fas fa-robot"></i>Computer Score: <span id="computer-score">0</span></div>
+	  <div class="player-info"><i class="fas fa-user"></i> Player Score: <span id="player-score">0</span></div>
+	  <div class="computer-info"><i class="fas fa-robot"></i> Computer Score: <span id="computer-score">0</span></div>
 	</div>
 </div>
 
@@ -23,14 +24,15 @@
 	<button id="Scissors" class="button" aria-label="Scissors"><i class="far fa-hand-scissors"></i></button>
 </div>
 
-<div id="restart-area">
-	<button id="restart-button" class="button">Restart</button>
-</div>
-
 <div id="console">
 	<div id="choices"></div>
 	<div id="current-round"></div>
+	<div id="gameover"></div>
 	<div id="results" class="blink"></div>
+</div>
+
+<div id="restart-area">
+	<button id="restart-button" class="button">Restart</button>
 </div>
 
 <script src="rock-paper-scissors.js"></script>

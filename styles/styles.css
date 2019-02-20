@@ -1,17 +1,18 @@
 body {
-  background-color: white;
+  background-color: #aafdff;
+  font-size: 20px;
 }
 
 div {
-  font-family: sans-serif;
+  font-family: 'VT323', monospace;
 }
 
 #button-area {
-	background-color: blue;
+  display: flex;
+  justify-content: center;
 }
 
 .button {
-/*  display: inline-block;*/
   padding: 15px 25px;
   font-size: 10vw;
   cursor: pointer;
@@ -19,64 +20,72 @@ div {
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #0cadaf;
   border: none;
   border-radius: 50%;
-}
-
-.button:hover {
-	background-color: #000000;
-  transition-duration: 0.5s;
-}
-
-#Rock, #Paper, #Scissors {
- 
-}
-
-#restart-button {
-  font-size: 1em;
-
-}
-
-#restart-area {
-  height: 20px;
-  width: 20px;
   margin: 0 auto;
 }
 
+.button:hover {
+	background-color: #394747;
+  transition-duration: 0.5s;
+}
+
+#restart-button {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+#restart-area {
+ display: flex;
+ justify-content: center;
+ }
+
 #score-card {
-/*  display: block;*/
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3em;
+}
+
+#score-card > div > i {
   font-size: 2em;
+  color: #394747;
 }
 
 .player-info {
-  float: left;
-  color: ;
-}
-
-.computer-info {
-  float: right;
-  color: ;
-}
-
-#console {
-  border: solid 1em gray;
-  margin: 2em;
-  background-color: black;
-  color: white;
-  height: 300px;
-}
-
-#console > div {
   padding: 1em;
 }
 
-#current-round {
-  font-size: 1.5em;
+.computer-info {
+  padding: 1em;
 }
 
-#results {
+#console {
+  border: outset 0.5em #008d8e;
+  margin: 2em auto;
+  background-color: #394747;
+  color: white;
+  width: 70%;
+  min-height: 10em;
+  box-sizing: border-box;
+}
+
+#console > div {
+  font-size: 1.3em;
+  text-align: center;
+  padding: 0.3em 0em;
+}
+
+#title-area {
+  font-family: 'Bungee Shade', cursive;
   font-size: 2em;
+  background-color: #023838;
+  color: #035e5e;
+}
+
+#gameover {
+  color: red;
 }
 
 /* Blinking font */
@@ -90,8 +99,12 @@ div {
   }
 }
 
-@media (max-width: 300px) {
-  body {
-    background-color: blue;
-  }
+@media only screen and (max-width: 600px) {
+ body {
+  font-size: 18px;
+ }
+
+#console {
+  min-height: 14em;
+}
 }

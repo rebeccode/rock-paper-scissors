@@ -8,7 +8,9 @@ const computerUpdate = document.getElementById("computer-score");
 const round = document.getElementById("current-round");
 const results = document.getElementById("results");
 const choices = document.getElementById("choices");
-const buttons = document.querySelectorAll('button');
+const gameover = document.getElementById("gameover");
+const buttons = document.querySelectorAll("button");
+
 /* end */
 
 function updateScore() {
@@ -80,8 +82,10 @@ function playRound(a, b) {
 function result() {
   if (playerScore === 5) {
   results.textContent = "You're the winner. You won " + playerScore + " games.";
+  gameover.textContent = "Game Over!";
   } else if (computerScore === 5) {
   results.textContent = "You're the loser. You lost " + computerScore + " games.";
+  gameover.textContent = "Game Over!";
   }
   return;
 }
@@ -92,6 +96,7 @@ function restart() {
   choices.textContent = '';
   round.textContent = '';
   results.textContent = '';
+  gameover.textContent = '';
   updateScore();
   return;
 }
