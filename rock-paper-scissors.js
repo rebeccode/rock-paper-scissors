@@ -18,7 +18,7 @@ computerUpdate.textContent = computerScore;
 
 buttons.forEach((button) => {
   button.addEventListener('click', (e) => {
-    if (button.id != "reset") {
+    if (button.id != "restart-button") {
       playerSelection = (button.id);
       playRound();
       updateScore();

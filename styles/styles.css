@@ -11,7 +11,7 @@ div {
 }
 
 .button {
-  display: inline-block;
+/*  display: inline-block;*/
   padding: 15px 25px;
   font-size: 10vw;
   cursor: pointer;
@@ -26,30 +26,68 @@ div {
 
 .button:hover {
 	background-color: #000000;
-    transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
 #Rock, #Paper, #Scissors {
  
 }
 
-#reset {
+#restart-button {
+  font-size: 1em;
 
-  font-size: 5vw;
+}
 
+#restart-area {
+  height: 20px;
+  width: 20px;
+  margin: 0 auto;
 }
 
 #score-card {
-  display: flex;
+/*  display: block;*/
+  font-size: 2em;
+}
 
+.player-info {
+  float: left;
+  color: ;
+}
+
+.computer-info {
+  float: right;
+  color: ;
+}
+
+#console {
+  border: solid 1em gray;
+  margin: 2em;
+  background-color: black;
+  color: white;
+  height: 300px;
+}
+
+#console > div {
+  padding: 1em;
 }
 
 #current-round {
-
+  font-size: 1.5em;
 }
 
 #results {
+  font-size: 2em;
+}
 
+/* Blinking font */
+.blink {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 300px) {
